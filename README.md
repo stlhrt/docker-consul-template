@@ -1,10 +1,7 @@
-stlhrt/consul
+stlhrt/consul-template
 =========================
 Docker base container for main [_Consul_](http://www.consul.io/) on Ubuntu Trusty Tahr.
-Meant to be cluster controller, single by default but can be scaled up by changing environment variable.
-
+Meant as a base for containers running daemons configured from Consul cluster like [stlhrt/consul-template-haproxy](https://github.com/stlhrt/docker-consul-template-haproxy)
 Exposes volume for _Consul_ configuration files in /opt/consul/conf
 
-Default configuration is provided in 50-defaults.json but can be overriden, just mount a directory with *.json files there and Consul will load them.
-
-Exposes all _Consul_ ports for all transports as well as WEB UI, dns port is 53.
+Template config is expected to be mounted in /opt/template/config.hcl but can be overriden by CONSUL_TEMPLATE_CONFIG environment variable.
