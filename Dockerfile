@@ -9,5 +9,3 @@ RUN cd /tmp && tar xvfz /tmp/consul-template.tar.gz && mv consul-template_0.1.0_
 ADD /supervisord-template.conf /etc/supervisor/conf.d/supervisord-template.conf
 
 ENV CONSUL_TEMPLATE_CONFIG /opt/template/config.hcl
-
-CMD ["supervisord", "-n"]
